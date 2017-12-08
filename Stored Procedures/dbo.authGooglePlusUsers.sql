@@ -1,0 +1,10 @@
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_NULLS ON
+GO
+CREATE PROCEDURE [dbo].[authGooglePlusUsers]
+AS
+BEGIN
+	SELECT * FROM dbo.Users WHERE UserType = 3 AND Activ = 1;
+END;
+GO

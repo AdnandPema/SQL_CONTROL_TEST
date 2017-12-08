@@ -1,0 +1,31 @@
+CREATE TABLE [dbo].[Recipes_Trigger]
+(
+[Id] [int] NOT NULL IDENTITY(1, 1),
+[RecipesNO] [nvarchar] (50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[RecipesDescription] [nvarchar] (4000) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[InputChannelsID] [int] NULL,
+[TriggerID] [int] NULL,
+[Value] [nvarchar] (4000) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[StartDate] [date] NULL,
+[StartTime] [time] NULL,
+[EndDate] [date] NULL,
+[EndTime] [time] NULL,
+[StoreType] [nvarchar] (4000) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[StoreValue] [nvarchar] (4000) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[CreatedUser] [nvarchar] (4000) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[Active] [bit] NULL,
+[Status] [int] NULL CONSTRAINT [DF_Recipes_Trigger_Status] DEFAULT ((0)),
+[Monday] [bit] NULL CONSTRAINT [DF_Recipes_Trigger_Moday] DEFAULT ((1)),
+[TuesDay] [bit] NULL CONSTRAINT [DF_Recipes_Trigger_TuesDay] DEFAULT ((1)),
+[Wednesday] [bit] NULL CONSTRAINT [DF_Recipes_Trigger_Wednesday] DEFAULT ((1)),
+[Thursday] [bit] NULL CONSTRAINT [DF_Recipes_Trigger_Thursday] DEFAULT ((1)),
+[Friday] [bit] NULL CONSTRAINT [DF_Recipes_Trigger_Friday] DEFAULT ((1)),
+[Saturday] [bit] NULL CONSTRAINT [DF_Recipes_Trigger_Saturday] DEFAULT ((1)),
+[Sunday] [bit] NULL CONSTRAINT [DF_Recipes_Trigger_Sunday] DEFAULT ((1)),
+[Type] [nvarchar] (50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[Optional] [bit] NULL CONSTRAINT [DF_Recipes_Trigger_Optional] DEFAULT ((0)),
+[Notes] [nvarchar] (max) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+[ClientCode] [nvarchar] (50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL CONSTRAINT [DF_Recipes_Trigger_ClientCode] DEFAULT (N'ALL'),
+[Category] [nvarchar] (max) COLLATE SQL_Latin1_General_CP1_CI_AS NULL
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO

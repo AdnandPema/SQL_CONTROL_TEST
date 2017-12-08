@@ -1,0 +1,13 @@
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_NULLS ON
+GO
+CREATE PROCEDURE [logical_Sys_authUserBasedOnGUID]
+(
+	@guid text 
+)
+AS
+BEGIN
+	SELECT * FROM dbo.Users WHERE Activ = 1 AND User_GUID LIKE @guid ;
+END;
+GO
